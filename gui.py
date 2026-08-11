@@ -26,6 +26,7 @@ import random
 import os
 from tkinter import filedialog
 from PIL import Image, ImageTk, ImageDraw
+from reportlab.pdfgen import canvas
 
 from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet

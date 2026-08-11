@@ -35,3 +35,8 @@ Thumbs.db
 
 admins.txt
 accounts_backup.txt
+
+admins.txt
+*.db
+*.sqlite
+*.pdf
