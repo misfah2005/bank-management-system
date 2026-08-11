@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Generated receipts
+receipts/
+
+# Generated reports
+reports/
+
+# Backup files
+*_backup.*
+bank_old.*
+bank_corrupt_backup.*
+recovered.*
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+admins.txt
+accounts_backup.txt
