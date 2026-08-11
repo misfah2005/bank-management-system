@@ -1,47 +1,12 @@
 # 🏦 Bank Management System
 
-A desktop-based **Bank Management System** developed using Python, Tkinter, and SQLite.
-The system provides customer banking operations, ATM services, loan management, fixed deposits, transactions, and administrator controls through a graphical user interface.
+A desktop-based **Bank Management System** developed using **Python, Tkinter, and SQLite**.
+
+The application provides a graphical interface for managing customer accounts, banking transactions, loans, fixed deposits, ATM services, administrator operations, reports, and database backup/restore functionality.
 
 ---
 
-## 🎯 Project Objective
-
-The main objective of this project is to develop a simple and secure banking application that can manage customer accounts and provide common banking services through an easy-to-use GUI.
-
-### Main Objectives
-
-* Manage customer bank accounts
-* Deposit and withdraw money
-* Transfer money between accounts
-* Check account balance
-* Manage transactions
-* Manage loans and EMI payments
-* Manage fixed deposits
-* Apply and manage ATM cards
-* Perform ATM withdrawals
-* Change ATM PIN
-* Block and unblock ATM cards
-* Generate ATM receipts
-* Provide administrator controls
-* Generate banking reports
-* Backup and restore banking data
-
----
-
-## 🛠️ Technologies Used
-
-| Technology    | Purpose                       |
-| ------------- | ----------------------------- |
-| Python        | Main programming language     |
-| Tkinter       | Graphical User Interface      |
-| SQLite        | Database management           |
-| ReportLab     | PDF report/receipt generation |
-| File Handling | Backup and receipt storage    |
-
----
-
-## 📌 Main Modules
+## ✨ Features
 
 ### 👤 Customer Management
 
@@ -49,16 +14,17 @@ The main objective of this project is to develop a simple and secure banking app
 * Customer login
 * View account details
 * Check account balance
-* Change PIN
+* Change customer PIN
 * Delete account
 
-### 💰 Banking Transactions
+### 💰 Banking Operations
 
 * Deposit money
 * Withdraw money
-* Transfer money
+* Transfer money between accounts
 * View transaction history
-* Mini statement
+* Generate mini statements
+* Transaction validation
 
 ### 🏧 ATM Management
 
@@ -70,58 +36,90 @@ The main objective of this project is to develop a simple and secure banking app
 * Change ATM PIN
 * Block ATM card
 * Unblock ATM card
-* Generate ATM receipt
 * ATM transaction management
+* Generate ATM receipts
+* Generate PDF ATM receipts
 
 ### 💳 Loan Management
 
-* Apply for loan
+* Apply for loans
 * Loan approval
 * Loan calculation
 * EMI calculation
-* EMI payment
+* EMI payments
 * Loan status management
 
-### 🏦 Fixed Deposit
+### 🏦 Fixed Deposit Management
 
-* Create fixed deposit
+* Create fixed deposits
 * Calculate FD interest
-* View fixed deposit details
-* Manage FD records
+* View FD details
+* Manage fixed deposit records
 
 ### 👨‍💼 Admin Management
 
-* Admin login
-* View customers
+* Admin authentication
+* View customer information
 * Search ATM cards
 * View individual ATM card details
 * Approve ATM cards
-* Block/unblock cards
+* Block and unblock ATM cards
 * View dashboard statistics
-* View bank reports
+* Generate administrative reports
 
 ### 📊 Reports
 
-* Bank summary report
+* Bank summary reports
 * Transaction reports
-* Admin reports
 * ATM reports
+* Admin reports
 * PDF report generation
-* ATM receipt generation
+* PDF ATM receipt generation
 
 ### 💾 Backup & Restore
 
 * Database backup
 * Database restore
-* Banking data protection
+* Banking data recovery tools
+
+---
+
+## 🎯 Project Objective
+
+The objective of this project is to develop a practical desktop banking application that demonstrates how common banking operations can be managed through a user-friendly graphical interface.
+
+The system focuses on:
+
+* Customer account management
+* Secure banking transactions
+* ATM card management
+* Loan and EMI management
+* Fixed deposit management
+* Administrative controls
+* Database management
+* Report generation
+* Backup and restore operations
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology        | Purpose                            |
+| ----------------- | ---------------------------------- |
+| **Python**        | Main programming language          |
+| **Tkinter**       | Graphical User Interface           |
+| **SQLite**        | Database management                |
+| **ReportLab**     | PDF report and receipt generation  |
+| **File Handling** | Receipt and backup file management |
+| **VS Code**       | Development environment            |
 
 ---
 
 ## 🗄️ Database
 
-The application uses **SQLite** as the database.
+The application uses **SQLite** for storing banking information.
 
-### Main Tables
+### Main Database Tables
 
 ```text
 accounts
@@ -131,16 +129,16 @@ fixed_deposits
 atm_cards
 ```
 
-### Accounts Table
+### Accounts
 
-Stores customer bank account information such as:
+Stores customer account information such as:
 
 * Account number
 * Customer name
-* Balance
+* Account balance
 * PIN
 
-### Transactions Table
+### Transactions
 
 Stores:
 
@@ -150,15 +148,26 @@ Stores:
 * Amount
 * Date and time
 
-### Loans Table
+### Loans
 
-Stores customer loan information and repayment details.
+Stores:
 
-### Fixed Deposits Table
+* Loan information
+* Loan amount
+* EMI information
+* Repayment details
+* Loan status
 
-Stores fixed deposit information and interest-related data.
+### Fixed Deposits
 
-### ATM Cards Table
+Stores:
+
+* FD information
+* Deposit amount
+* Interest information
+* FD records
+
+### ATM Cards
 
 Stores:
 
@@ -172,46 +181,50 @@ Stores:
 
 ---
 
-## 🔐 Security Features
+## 🔐 Security & Validation
 
-The system includes several security mechanisms:
+The system includes several validation and security mechanisms:
 
 * Customer PIN verification
 * ATM PIN verification
 * ATM card status verification
-* Failed ATM attempt protection
-* ATM card blocking
-* ATM card unblocking
+* ATM card blocking and unblocking
 * Admin authentication
-* Loan approval process
 * Transaction validation
+* Loan approval workflow
+* Account verification
+* ATM transaction verification
+
+> **Security note:** This project is intended for educational and demonstration purposes. Production banking software would require stronger security controls, encryption, secure credential storage, auditing, and regulatory compliance.
 
 ---
 
-## 🖥️ Application Interface
+## 🖥️ Application Modules
 
-The system provides a graphical interface using Tkinter.
-
-The application contains separate functions for:
+The graphical interface provides access to:
 
 ```text
-Customer
-Admin
-Banking
-Loans
-Fixed Deposits
-ATM
-Reports
-Backup / Restore
+┌──────────────────────────────┐
+│     BANK MANAGEMENT SYSTEM   │
+├──────────────────────────────┤
+│ Customer Management          │
+│ Banking Transactions         │
+│ ATM Management               │
+│ Loan Management              │
+│ Fixed Deposits               │
+│ Admin Management             │
+│ Reports                      │
+│ Backup / Restore             │
+└──────────────────────────────┘
 ```
 
 ---
 
-## 🚀 How to Run
+## 🚀 Installation & Setup
 
 ### 1. Install Python
 
-Install Python 3.x on the computer.
+Install **Python 3.x** on your computer.
 
 Check the installed version:
 
@@ -225,16 +238,30 @@ or:
 py --version
 ```
 
-### 2. Open the Project Folder
-
-Open the project folder in VS Code.
-
-### 3. Install Required Package
-
-Install ReportLab:
+### 2. Clone the Repository
 
 ```bash
-pip install reportlab
+git clone https://github.com/misfah2005/bank-management-system.git
+```
+
+Move into the project directory:
+
+```bash
+cd bank-management-system
+```
+
+### 3. Install Dependencies
+
+Install the required Python packages:
+
+```bash
+py -m pip install -r requirements.txt
+```
+
+If required, ReportLab can also be installed separately:
+
+```bash
+py -m pip install reportlab
 ```
 
 ### 4. Run the Application
@@ -243,37 +270,86 @@ pip install reportlab
 py gui.py
 ```
 
-The Bank Management System GUI will open.
+The Bank Management System graphical interface will open.
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-bank_management_system/
+bank-management-system/
 │
-├── bank.py/
-│   ├── gui.py
-│   ├── main.py
-│   ├── bank.db
-│   ├── check_db.py
-│   ├── check_atm.py
-│   ├── check_transactions.py
-│   └── check_fd.py
-│
+├── gui.py
+├── main.py
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+├── admins.example.txt
+├── .gitignore
+│
+├── tools/
+│   ├── approve_atm.py
+│   ├── check_accounts.py
+│   ├── check_atm.py
+│   ├── check_balance.py
+│   ├── check_db.py
+│   ├── check_fd.py
+│   ├── check_notifications.py
+│   ├── check_photo.py
+│   ├── check_transactions.py
+│   ├── fix_atm_table.py
+│   ├── recover.py
+│   ├── restore_db.py
+│   ├── unblock_atm.py
+│   └── update_atm_table.py
+│
+└── ...
 ```
 
-> Keep a separate backup copy of `bank.db` before making major changes to the project.
+### Important Files
+
+| File                 | Purpose                                                    |
+| -------------------- | ---------------------------------------------------------- |
+| `gui.py`             | Main graphical user interface                              |
+| `main.py`            | Core banking/database functionality                        |
+| `requirements.txt`   | Python dependencies                                        |
+| `admins.example.txt` | Example administrator configuration                        |
+| `tools/`             | Database checking, recovery, ATM and maintenance utilities |
+
+> Sensitive files such as administrator credentials and local database files should not be committed to GitHub.
 
 ---
 
-## 📋 System Features
+## 🧾 ATM Receipt System
+
+The ATM module supports receipt generation for transactions.
+
+Example:
+
+```text
+BANK MANAGEMENT SYSTEM
+
+ATM RECEIPT
+
+Account Number : 1001
+Transaction    : EMI Payment
+Amount         : Rs.10000.00
+Date           : 11-08-2026
+Time           : 11:45 PM
+Available Balance : Rs.41800.00
+
+THANK YOU - VISIT AGAIN
+```
+
+ATM receipts can be generated as PDF documents using **ReportLab**.
+
+---
+
+## 📋 Project Status
 
 | Feature                     | Status      |
 | --------------------------- | ----------- |
 | Customer Account Management | ✅ Completed |
+| Customer Login              | ✅ Completed |
 | Deposit                     | ✅ Completed |
 | Withdrawal                  | ✅ Completed |
 | Money Transfer              | ✅ Completed |
@@ -281,19 +357,41 @@ bank_management_system/
 | Mini Statement              | ✅ Completed |
 | Loan Management             | ✅ Completed |
 | EMI Management              | ✅ Completed |
-| Fixed Deposit               | ✅ Completed |
+| Fixed Deposit Management    | ✅ Completed |
 | ATM Card Management         | ✅ Completed |
 | ATM Withdrawal              | ✅ Completed |
 | ATM Balance Inquiry         | ✅ Completed |
 | ATM Mini Statement          | ✅ Completed |
 | ATM PIN Change              | ✅ Completed |
 | ATM Card Blocking           | ✅ Completed |
+| ATM Card Unblocking         | ✅ Completed |
 | ATM Receipt Generator       | ✅ Completed |
+| ATM PDF Receipt             | ✅ Completed |
 | Admin Dashboard             | ✅ Completed |
 | ATM Search                  | ✅ Completed |
 | ATM Card Details            | ✅ Completed |
-| Reports                     | ✅ Completed |
+| Admin Reports               | ✅ Completed |
+| PDF Report Generation       | ✅ Completed |
 | Backup / Restore            | ✅ Completed |
+
+---
+
+## 🔮 Future Improvements
+
+Possible future enhancements include:
+
+* Online banking functionality
+* Email notifications
+* SMS notifications
+* Two-factor authentication
+* Biometric authentication
+* Password hashing and stronger credential security
+* Cloud database integration
+* REST API integration
+* Mobile application
+* Advanced transaction analytics
+* Improved audit logging
+* Role-based administrator permissions
 
 ---
 
@@ -308,27 +406,38 @@ bank_management_system/
 ### Development Tools
 
 * Python
-* VS Code
-* SQLite
 * Tkinter
+* SQLite
 * ReportLab
+* VS Code
+* Git & GitHub
 
 ---
 
 ## 📜 Conclusion
 
-The Bank Management System provides a complete desktop-based solution for handling common banking operations.
+The **Bank Management System** demonstrates the practical implementation of a desktop banking application using Python, Tkinter, and SQLite.
 
-The project demonstrates practical implementation of:
+The project covers a wide range of real-world concepts including:
 
-* Python programming
-* Object-oriented programming concepts
 * GUI development
 * Database management
-* File handling
 * Authentication
-* Transaction processing
+* Banking transactions
 * ATM management
-* Report generation
+* Loan and EMI processing
+* Fixed deposit management
+* PDF report generation
+* File handling
+* Backup and restore operations
 
-This project can be further enhanced by adding online banking, email/SMS notifications, biometric authentication, cloud database support, and mobile application integration.
+This project provides a strong foundation for further development into a more advanced banking platform.
+
+---
+
+## ⭐ Support
+
+If you find this project useful, consider giving the repository a ⭐ on GitHub.
+
+**GitHub Repository:**
+https://github.com/misfah2005/bank-management-system
